@@ -1,0 +1,71 @@
+<robot height="1.425" cameras="2" localization="ukf" face="1" neck="0"> <!--localization: {ekf, pkf, ukf}-->
+	<rfid-config tx-power="8" rx-sensitivity="22"/>
+	<navigation>
+		<initial-position>
+			<x-distrib mean="0.005" variance="0.00005677" bias="0.005"/> <!-- meters -->
+			<y-distrib mean="0.005" variance="0.00005677" bias="0.005"/> <!-- meters -->
+			<th-distrib mean="0.1" variance="0.01042" bias="0.1"/> <!-- radians -->
+		</initial-position>
+		<process-noise>
+			<d-distrib mean="-0.019045" variance="0.00015357" bias="-0.019045"/> <!-- meters -->
+			<th-distrib mean="0.0201" variance="0.0009162" bias="0.0201"/> <!-- radians -->
+		</process-noise>
+		<sensors>
+			<sensor type="laser" activated="1">
+				<observation-noise>
+					<d-distrib alpha="0.3" mean="0.029439" variance="0.0000438966" bias="0.029439"/>  <!-- eters -->
+					<th-distrib alpha="0.3" mean="0.0092" variance="0.0003285" bias="0.0092"/> <!-- radians -->
+				</observation-noise>
+			</sensor>
+			<sensor type="camera" activated="1">
+				<observation-noise>
+					<d-distrib alpha="0.1" mean="0.05" variance="0.02" bias="0.05"/>  <!-- meters -->
+					<th-distrib alpha="0.1" mean="0.0465" variance="0.00033965" bias="0.0465"/> <!-- radians -->
+				</observation-noise>
+			</sensor>
+		</sensors>
+	</navigation>
+	<permissions>
+		<permission function="0x00" token-required="0"/>
+		<permission function="0x01" token-required="0"/>
+		<permission function="0x02" token-required="0"/>
+		<permission function="0x03" token-required="1"/>
+		<permission function="0x04" token-required="1"/>
+		<permission function="0x05" token-required="1"/>
+		<permission function="0x06" token-required="1"/>
+		<permission function="0x07" token-required="1"/>
+		<permission function="0x08" token-required="0"/>
+		<permission function="0x09" token-required="0"/>
+		<permission function="0x0A" token-required="1"/>
+		<permission function="0x0B" token-required="1"/>
+		<permission function="0x10" token-required="1"/>
+		<permission function="0x11" token-required="1"/>
+		<permission function="0x12" token-required="0"/>
+		<permission function="0x13" token-required="1"/>
+		<permission function="0x14" token-required="1"/>
+		<permission function="0x15" token-required="0"/>
+		<permission function="0x16" token-required="1"/>
+		<permission function="0x17" token-required="0"/>
+		<permission function="0x18" token-required="0"/>
+		<permission function="0x19" token-required="0"/>
+		<permission function="0x1A" token-required="0"/>
+		<permission function="0x1B" token-required="1"/>
+		<permission function="0x1C" token-required="1"/>
+		<permission function="0x1D" token-required="1"/>
+		<permission function="0x1E" token-required="1"/>
+		<permission function="0x1F" token-required="1"/>
+		<permission function="0x20" token-required="1"/>
+		<permission function="0x21" token-required="1"/>
+		<permission function="0x22" token-required="0"/>
+		<permission function="0x23" token-required="0"/>
+		<permission function="0x30" token-required="1"/>
+		<permission function="0x31" token-required="0"/>
+		<permission function="0x40" token-required="1"/>
+		<permission function="0x41" token-required="1"/>
+		<permission function="0x42" token-required="1"/>
+		<permission function="0x7C" token-required="0"/>
+		<permission function="0x7D" token-required="1"/>
+		<permission function="0x7E" token-required="1"/>
+		<permission function="0x7F" token-required="0"/>
+	</permissions>
+</robot>
